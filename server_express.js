@@ -18,8 +18,9 @@ app.get("/pets/:id" , function (req, res) {
         if(req.params.id >= 0 && req.params.id < pets.length){
             res.send(pets[req.params.id]);
         }else{
-            res.status(404).send('problem')
-            res.set('Content-Type', 'text/plain')
+            res.status(404)
+            res.set('Content-Type', 'text/plain').send('problem')
+            // res.end(err)
         }
     })
 });
